@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { useState } from "react"
 import { Form } from "./components/form"
+import { Credits } from "./components/credits"
 
 function App() {
   const [state, setState] = useState<'closed' | 'tmp' | 'opened'>('closed')
@@ -16,6 +17,8 @@ function App() {
 
   return (
     <section className="w-full h-dvh flex justify-center gap-4 items-center">
+      <Credits />
+      
       {state == 'opened' && (
         <Form setState={setState} />
       )}
